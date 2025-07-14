@@ -1,4 +1,3 @@
-# In-Progress
 # Scalable System Monitoring Tool
 
 A production-grade monitoring and auto-healing platform for Kubernetes-based microservices architectures, demonstrating core Site Reliability Engineering (SRE) principles including observability, automation, and fault tolerance.
