@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-app
+  namespace: sre-monitoring
+spec:
+  replicas: 2                               # Start with 2 pods for basic redundancy
+  selector:
+    matchLabels:
+      app: service-app
+  template:
+    metadata:
+      labels:
+        app: service-app
+    spec:
+      containers:
+        - name: service-app
+          image: myrepo/service-app:latest  # Reference your built container image
+          ports:
+            - containerPort: 8080
+          livenessProbe:                    # Kubernetes restarts unhealthy containers
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:                   # Only send traffic when ready
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5

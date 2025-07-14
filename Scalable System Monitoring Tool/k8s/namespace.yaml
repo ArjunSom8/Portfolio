@@ -1,0 +1,5 @@
+# Isolates all project resources under one namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sre-monitoring

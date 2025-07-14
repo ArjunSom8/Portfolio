@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: service-app-hpa
+  namespace: sre-monitoring
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind:        Deployment
+    name:        service-app
+  minReplicas: 2          # Never scale below this
+  maxReplicas: 10         # Cap maximum pods
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50  # Scale pods to maintain ~50% CPU

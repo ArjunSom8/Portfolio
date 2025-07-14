@@ -1,0 +1,11 @@
+# Default chart values—override these per-environment
+replicaCount: 2
+
+image:
+  repository: myrepo/service-app
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80

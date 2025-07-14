@@ -1,0 +1,5 @@
+# Helm chart metadata
+apiVersion: v2
+name: service-app
+version: 0.1.0
+appVersion: "latest"

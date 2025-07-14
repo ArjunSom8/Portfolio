@@ -1,0 +1,13 @@
+# ClusterIP Service to load-balance traffic across pods
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-app
+  namespace: sre-monitoring
+spec:
+  selector:
+    app: service-app
+  ports:
+    - protocol: TCP
+      port: 80           # Exposed port inside cluster
+      targetPort: 8080   # Container port

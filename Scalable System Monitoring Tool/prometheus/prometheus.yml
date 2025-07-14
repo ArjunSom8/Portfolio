@@ -1,0 +1,12 @@
+# Global scrape configuration
+global:
+  scrape_interval: 15s    # How often to collect metrics
+
+scrape_configs:
+  - job_name: 'kubernetes-service-endpoints'
+    kubernetes_sd_configs:
+      - role: endpoints   # Auto-discover service endpoints
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_service_label_app]
+        regex: service-app
+        action: keep       # Only scrape our service-app pods

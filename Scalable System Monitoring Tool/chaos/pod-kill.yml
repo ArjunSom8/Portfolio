@@ -1,0 +1,13 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: service-app-pod-kill
+  namespace: sre-monitoring
+spec:
+  action: pod-kill               # Randomly kill pods to test resilience
+  mode: one                      # Kill one pod at a time
+  selector:
+    labelSelectors:
+      "app": "service-app"
+  scheduler:
+    cron: "@every 1m"            # Inject fault every minute
