@@ -60,8 +60,8 @@ A production-grade monitoring and auto-healing platform for Kubernetes-based mic
 
 1. **Clone the repository**:  
    ```bash
-   git clone https://github.com/<your-org>/sre-monitoring-tool.git
-   cd sre-monitoring-tool
+   git clone...
+   cd scalable-system-monitoring-tool
    ```
 
 2. **Provision infrastructure** (GKE cluster):  
