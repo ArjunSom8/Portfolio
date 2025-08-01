@@ -33,8 +33,6 @@ A production-grade monitoring and auto-healing platform for Kubernetes-based mic
 
 ## Architecture
 
-
-
 1. **Service Layer**: Python/Go microservice containerized with Docker.  
 2. **Kubernetes Cluster**: GKE-hosted cluster orchestrating pods, services, and autoscaling.  
 3. **Observability**: Prometheus scrapes metrics; Grafana provides visualization.  
