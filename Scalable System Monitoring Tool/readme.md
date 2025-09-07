@@ -14,7 +14,6 @@ A production-grade monitoring and auto-healing platform for Kubernetes-based mic
 - [Directory Structure](#directory-structure)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -154,9 +153,3 @@ Contributions welcome! Please open issues or submit pull requests for bug fixes 
 3. Commit your changes (`git commit -m 'Add some feature'`)  
 4. Push to the branch (`git push origin feature/YourFeature`)  
 5. Open a Pull Request  
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
